@@ -1,6 +1,7 @@
 # How to create a cdk environment
 
 # Install node
+
 ```sh
 cat <<EOF > install_node.yaml
 - name: Installer
@@ -22,4 +23,25 @@ source ~/.bashrc
 # Install cdk
 ```sh
 npm i -g aws-cdk
+```
+
+# Install go
+https://go.dev/dl/
+```sh
+cat <<EOF > install_go.yaml
+- name: Installer
+  hosts: all
+  tasks:
+  - become: "yes"
+    name: Install go
+    unarchive:
+      creates: /usr/local/go/
+      dest: /usr/local/
+      remote_src: "yes"
+      src: |-
+        https://go.dev/dl/go{{ version }}.linux-amd64.tar.gz
+EOF
+ansible-playbook -ilocalhost, -clocal -eversion=1.18.3 install_go.yaml -K
+echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
+source ~/.bashrc
 ```

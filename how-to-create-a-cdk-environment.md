@@ -45,3 +45,9 @@ ansible-playbook -ilocalhost, -clocal -eversion=1.18.3 install_go.yaml -K
 echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
 source ~/.bashrc
 ```
+
+# Install vim-go (optional)
+```sh
+git clone https://github.com/fatih/vim-go.git ~/.vim/pack/plugins/start/vim-go
+vim +GoInstallBinaries +q
+```

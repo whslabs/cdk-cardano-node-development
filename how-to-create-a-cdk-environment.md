@@ -51,3 +51,28 @@ source ~/.bashrc
 git clone https://github.com/fatih/vim-go.git ~/.vim/pack/plugins/start/vim-go
 vim +GoInstallBinaries +q
 ```
+
+# Install bazel
+https://github.com/bazelbuild/bazelisk/releases
+```sh
+cat <<EOF > install_bazelisk.yaml
+- name: Installer
+  hosts: all
+  tasks:
+  - become: "yes"
+    get_url:
+      dest: /usr/local/bin/bazelisk
+      mode: "0755"
+      url: |-
+        https://github.com/bazelbuild/bazelisk/releases/download/v{{ version }}/bazelisk-linux-amd64
+    name: Install bazelisk
+EOF
+ansible-playbook -ilocalhost, -clocal -eversion=1.11.0 install_bazelisk.yaml -K
+```
+
+# Install buildifier
+```sh
+go install github.com/bazelbuild/buildtools/buildifier@latest
+echo 'export PATH=$PATH:$HOME/go/bin' >> ~/.bashrc
+source ~/.bashrc
+```

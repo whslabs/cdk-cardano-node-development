@@ -1,5 +1,5 @@
 {
-  "app": "go mod download && go run cdk-cardano-node-development.go",
+  "app": "bazelisk build //:cdk-cardano-node-development && bazel-bin/cdk-cardano-node-development_/cdk-cardano-node-development",
   "watch": {
     "include": [
       "**"

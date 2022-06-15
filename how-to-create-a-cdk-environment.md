@@ -52,6 +52,11 @@ git clone https://github.com/fatih/vim-go.git ~/.vim/pack/plugins/start/vim-go
 vim +GoInstallBinaries +q
 ```
 
+# Install build essential
+```sh
+sudo apt-get install -y build-essential
+```
+
 # Install bazel
 https://github.com/bazelbuild/bazelisk/releases
 ```sh

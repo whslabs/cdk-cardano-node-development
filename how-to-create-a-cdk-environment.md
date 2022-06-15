@@ -25,7 +25,9 @@ source ~/.bashrc
 npm i -g aws-cdk
 ```
 
-# Install go
+# Install go (development only)
+You do **not** need go to run `cdk deploy`
+
 https://go.dev/dl/
 ```sh
 cat <<EOF > install_go.yaml

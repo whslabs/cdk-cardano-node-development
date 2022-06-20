@@ -25,7 +25,7 @@ virt-install \
   --location https://deb.debian.org/debian/dists/bullseye/main/installer-amd64/ \
   --memory ${more_memory:-2048} \
   --name debian11-$name \
-  --network=bridge:virbr0 \
+  --network bridge:virbr0 \
   --os-variant debian11 \
   --vcpus 2 \
   ;

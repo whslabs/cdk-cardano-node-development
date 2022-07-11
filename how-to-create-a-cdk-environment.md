@@ -106,7 +106,7 @@ cat <<EOF > install_bazelisk.yaml
         https://github.com/bazelbuild/bazelisk/releases/download/v{{ version }}/bazelisk-linux-amd64
     name: Install bazelisk
 EOF
-ansible-playbook -ilocalhost, -clocal -eversion=1.11.0 install_bazelisk.yaml -K
+ansible-playbook -ilocalhost, -clocal -eversion=1.12.0 install_bazelisk.yaml -K
 ```
 
 # Install buildifier

@@ -75,7 +75,7 @@ cat <<EOF > install_go.yaml
       src: |-
         https://go.dev/dl/go{{ version }}.linux-amd64.tar.gz
 EOF
-ansible-playbook -ilocalhost, -clocal -eversion=1.18.3 install_go.yaml -K
+ansible-playbook -ilocalhost, -clocal -eversion=1.18.4 install_go.yaml -K
 echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
 source ~/.bashrc
 ```

@@ -48,7 +48,7 @@ cat <<EOF > install_node.yaml
       source {{ ansible_env.HOME }}/.nvm/nvm.sh
       nvm install node
 EOF
-ansible-playbook -ilocalhost, -clocal -envm_version=0.39.1 install_node.yaml
+ansible-playbook -ilocalhost, -clocal -envm_version=0.39.2 install_node.yaml
 source ~/.bashrc
 ```
 
